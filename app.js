@@ -203,7 +203,7 @@ const nodemailer = require('nodemailer');
 const path = require('path');
 const { check, validationResult } = require('express-validator');
 require('dotenv').config(); // Charger les variables d'environnement
-const Product = require('./models/product'); // Assure-toi du chemin correct vers le fichier du modèle
+
 
 
 const app = express();
@@ -257,10 +257,10 @@ app.get('/future', (req, res) => {
   res.render('future', { title: 'Mes projections' });
 });
 
-app.get('/products', async (req, res) => {
-    const products = await Product.find(); // Vous devrez remplacer par votre modèle de produit
-    res.render('products', { title: 'Produits', products: products });
-});
+// app.get('/products', async (req, res) => {
+//     const products = await Product.find(); // Vous devrez remplacer par votre modèle de produit
+//     res.render('products', { title: 'Produits', products: products });
+// });
 
 
 // Route pour afficher le formulaire de contact
